@@ -1,7 +1,7 @@
 \input texinfo
 @c -*-texinfo-*-
 @c %**start of header
-@setfilename guile.info
+@c@setfilename guile.info
 @documentencoding UTF-8
 @settitle Guile Reference Manual
 @set guile
@@ -124,18 +124,18 @@ x
 @c @cropmarks
 @c @end iftex
 
-@dircategory The Algorithmic Language Scheme
-@direntry
-* Guile Reference: (guile).     The Guile reference manual.
-@end direntry
+@c@dircategory The Algorithmic Language Scheme
+@c@direntry
+@c* Guile Reference: (guile).     The Guile reference manual.
+@c@end direntry
 
 @setchapternewpage odd
 
 @titlepage
 @sp 10
 @comment The title is printed in a large font.
-@title Guile Reference Manual
-@subtitle Edition @value{EDITION}, revision @value{MANUAL-REVISION}, for use with Guile @value{VERSION}
+@title Guile Справочное Руководство
+@subtitle Издание @value{EDITION}, пересмотр @value{MANUAL-REVISION}, для использования с Guile @value{VERSION}
 @c @subtitle $Id: guile.texi,v 1.49 2008-03-19 22:51:23 ossau Exp $
 
 @c See preface.texi for the list of authors
@@ -157,7 +157,7 @@ x
 
 @ifnottex
 @node Top, Preface, (dir), (dir)
-@top The Guile Reference Manual
+@top Guile Справочное Руководство
 
 @insertcopying
 @sp 1
@@ -182,11 +182,11 @@ x
 
 * Guile Implementation::
 
-Appendices
+Приложения
 
-* GNU Free Documentation License::  The license of this manual.
+* GNU Free Documentation License::  Лицензия данного руководства.
 
-Indices
+Содержание
 
 * Concept Index::
 * Procedure Index::
@@ -208,27 +208,28 @@ Indices
 @include scheme-reading.texi
 
 @node Programming in Scheme
-@chapter Programming in Scheme
+@chapter Программирование в Scheme
 
-Guile's core language is Scheme, and a lot can be achieved simply by using Guile
-to write and run Scheme programs --- as opposed to having to dive into C code.
-In this part of the manual, we explain how to use Guile in this mode, and
-describe the tools that Guile provides to help you with script writing,
-debugging, and packaging your programs for distribution.
+Базовым языком Guile является язык Scheme, и многое может быть достигнуто
+лишь с помощью Guile - написание и запуск программ Scheme --- в отличие от
+того, чтобы погрузиться в код C.  В этой части руководства объясняется, как
+использовать Guile в этом режиме, и описываются инструменты, которыми Guile
+обеспечивает, чтобы помочь написать сценарий, отладить и упаковать программу
+для распространения.
 
-For detailed reference information on the variables, functions, and so
-on that make up Guile's application programming interface (API), see
-@ref{API Reference}.
+Для получения более подробной справочной информации о переменных, функциях и
+так далее, которые составляют интерфейс прикладного программирования (API)
+Guile, смотреть @ref{API Reference}.
 
 @menu
-* Guile Scheme::                Guile's implementation of Scheme.
-* Invoking Guile::              Selecting optional features when starting Guile.
-* Guile Scripting::             How to write Guile scripts.
-* Using Guile Interactively::   Guile's REPL features.
-* Using Guile in Emacs::        Guile and Emacs.
-* Using Guile Tools::           A guild of scheming wizards.
-* Installing Site Packages::    Installing Scheme code.
-* Distributing Guile Code::     Building and distributing your code.
+* Guile Scheme::                Guile реализация Scheme.
+* Invoking Guile::              Дополнительные функции при запуске Guile.
+* Guile Scripting::             Как писать скрипты Guile.
+* Using Guile Interactively::   Особенности Guile REPL.
+* Using Guile in Emacs::        Guile и Emacs.
+* Using Guile Tools::           Использование guild мастерами Scheme.
+* Installing Site Packages::    Установка кода Scheme.
+* Distributing Guile Code::     Создание и распространение кода.
 @end menu
 
 @include scheme-intro.texi
@@ -237,27 +238,27 @@ on that make up Guile's application programming interface (API), see
 @include scheme-using.texi
 
 @node Programming in C
-@chapter Programming in C
+@chapter Программирование в C
 
-This part of the manual explains the general concepts that you need to
-understand when interfacing to Guile from C.  You will learn about how
-the latent typing of Scheme is embedded into the static typing of C, how
-the garbage collection of Guile is made available to C code, and how
-continuations influence the control flow in a C program.
+Эта часть руководства объясняет общие понятия, которые требуется понимать,
+когда взаимодействие с Guile исходит от C.  Объясняется о том, как скрытая
+типизация Scheme встроена в статической типизации С, как вывоз сборщика
+мусора из Guile становятся доступным из C кода, и как расширения влияют на
+поток управления в программе C.
 
-This knowledge should make it straightforward to add new functions to
-Guile that can be called from Scheme.  Adding new data types is also
-possible and is done by defining @dfn{foreign objects}.
+Эти знания должны сделать простым делом,  добавить новые функции Guile,
+которые могут быть вызваны из Scheme.  Добавление новых типов данных, также
+возможно и осуществляется путем определения @dfn{foreign objects}.
 
-The @ref{Programming Overview} section of this part contains general
-musings and guidelines about programming with Guile.  It explores
-different ways to design a program around Guile, or how to embed Guile
-into existing programs.
+Раздел части @ref{Programming Overview} содержит общие размышления и принципы
+о программировании с Guile.  Исследуются различные способы для разработки
+программы в среде Guile, или как вставить Guile в существующие программы.
 
-For a pedagogical yet detailed explanation of how the data representation of
-Guile is implemented, @xref{Data Representation}. You don't need to know the
-details given there to use Guile from C, but they are useful when you want to
-modify Guile itself or when you are just curious about how it is all done.
+Педагогическое, но ещё и подробное объяснение того, как реализуется
+представление данных Guile, @xref{Data Representation}.  Не требуется знать
+подробности, приведенные здесь для использовать Guile из C, но они полезны,
+когда требуется изменить Guile самому или когда просто есть желание знать,
+как это все делается.
 
 For detailed reference information on the variables, functions
 etc. that make up Guile's application programming interface (API),
