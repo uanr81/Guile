@@ -1,0 +1,71 @@
+Справка Команды [abbrev]:
+
+ ,help [all | GROUP | [-c] COMMAND]
+                              [,h] - Вызов справки.
+ ,show [TOPIC]                     - Дает информацию о Guile.
+ ,apropos REGEXP              [,a] - Пооиск bindings/modules/packages.
+ ,describe OBJ                [,d] - Вывод description/documentation.
+
+Module Commands [abbrev]:
+
+ ,module [MODULE]             [,m] - модули Изменить / Показать текущие модули.
+ ,import [MODULE ...]       [,use] - Импорт модулей / Список импортированных.
+ ,load FILE                   [,l] - Загрузить файл в текущий модуль.
+ ,reload [MODULE]            [,re] - Обновить данный модуль, или текущий модуль, если никто не получил.
+ ,binding                     [,b] - Список текущих привязок.
+ ,in MODULE COMMAND-OR-EXPRESSION  - Оценить выражение или команду в контексте модуля.
+
+Язык Команд [abbrev]:
+
+ ,language LANGUAGE           [,L] - Изменение языка.
+
+Команды Компиляции [abbrev]:
+
+ ,compile EXP                 [,c] - Сформировать скомпилированный код.
+ ,compile-file FILE          [,cc] - Компиляция файла.
+ ,expand EXP                [,exp] - Развернуть макросы в виде.
+ ,optimize EXP              [,opt] - Запустить оптимизатор на куске кода и распечатать результат.
+ ,disassemble EXP             [,x] - Декомпилировать скомпилированную процедуру.
+ ,disassemble-file FILE      [,xx] - Декомпилировать файл.
+
+Команды Профилирования [abbrev]:
+
+ ,time EXP                    [,t] - Время выполнения.
+ ,profile EXP                [,pr] - Профилирование выполнения.
+ ,trace EXP                  [,tr] - Трассировка выполнения.
+
+Команды Отладки [abbrev]:
+
+ ,backtrace [COUNT] [#:width W] [#:full? F]
+                             [,bt] - Печать трассировки.
+ ,up [COUNT]                       - Выберите призывающую кадр стека.
+ ,down [COUNT]                     - Выберите называемый фрейм стека.
+ ,frame [IDX]                [,fr] - Показать фрейм.
+ ,locals                           - Показать локальные переменные.
+ ,error-message           [,error] - Показать сообщение об ошибке.
+ ,break PROCEDURE        [,br ,bp] - Останов на вызовы PROCEDURE.
+ ,break-at-source FILE LINE
+                   [,break-at ,bs] - Останов, когда управление достигает заданного местоположения источника.
+ ,step                        [,s] - Шаг пока управление достигает другое местоположение источника.
+ ,step-instruction           [,si] - Шаг пока управления достигнет другой инструкции.
+ ,next                        [,n] - Шаг пока управление достигает другое местоположение источника в текущем кадре.
+ ,next-instruction           [,ni] - Шаг пока управление достигнет другой команды в текущем кадре.
+ ,finish                           - Шагнуть до текущей конечной точки.
+ ,tracepoint PROCEDURE       [,tp] - Добавить к точкам трассировки PROCEDURE.
+ ,traps                            - Показать набор вложенных в данный момент ловушек.
+ ,delete IDX                [,del] - Удалить ловушку.
+ ,disable IDX                      - Отключить ловушку.
+ ,enable IDX                       - Включить ловушку.
+ ,registers                [,regs] - Вывести зарегистрированные.
+
+Inspect Commands [abbrev]:
+
+ ,inspect EXP                 [,i] - Проверьте результат(ы) оценки EXP.
+ ,pretty-print EXP           [,pp] - Подробно-распечатать результат(ы) оценки EXP.
+
+Системные Команды [abbrev]:
+
+ ,gc                               - Сбор мусора.
+ ,statistics               [,stat] - Отображение статистики.
+ ,option [NAME] [EXP]         [,o] - List/show/set опции.
+ ,quit        [,q ,continue ,cont] - Закрытие текущей сессии.
